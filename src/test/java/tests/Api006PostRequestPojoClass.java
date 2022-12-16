@@ -1,7 +1,6 @@
 package tests;
 
-
-public class Api005Pojo{
+public class Api006PostRequestPojoClass {
     private String ResponseJSON;
     private int ResponseCode;
 
@@ -21,11 +20,11 @@ public class Api005Pojo{
         ResponseCode = responseCode;
     }
 
-    public Api005Pojo() {
+    public Api006PostRequestPojoClass() {
 
     }
 
-    public Api005Pojo(String responseJSON, int responseCode) {
+    public Api006PostRequestPojoClass(String responseJSON, int responseCode) {
         ResponseJSON = responseJSON;
         ResponseCode = responseCode;
     }
@@ -38,3 +37,4 @@ public class Api005Pojo{
                 '}';
     }
 }
+
