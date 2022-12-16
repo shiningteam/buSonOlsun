@@ -9,21 +9,21 @@ import static io.restassured.RestAssured.given;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Api005 extends AutomationExerciseBaseUrl01 {
+public class Api005PostRequest extends AutomationExerciseBaseUrl01 {
 
     @Test
     public void US05(){
 
         spec.pathParam("first", "searchProduct");
 
-        Api005Pojo requestData=new Api005Pojo("Searched products list", 200);
+        Api005PostRequestPojo requestData=new Api005PostRequestPojo("Searched products list", 200);
 
         Response response= given().spec(spec).contentType(ContentType.JSON).
                 body(requestData). auth().basic("admin", "password123").
                 when().post("/{first}");
         // response.prettyPrint();
 
-        Api005Pojo actualDAta= response.as(Api005Pojo.class);
+        Api005PostRequestPojo actualDAta= response.as(Api005PostRequestPojo.class);
         assertEquals(200, response.getStatusCode());
         assertEquals(requestData.getResponseCode(), actualDAta.getResponseCode());
         assertEquals(requestData.getResponseJSON(), actualDAta.getResponseJSON());
